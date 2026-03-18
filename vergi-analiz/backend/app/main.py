@@ -38,3 +38,4 @@ def root():
 @app.get("/health")
 def health():
     return {"durum": "sağlıklı"}
+# force redeploy Wed Mar 18 23:36:44 TSS 2026
