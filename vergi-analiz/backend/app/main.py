@@ -11,14 +11,17 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="Vergi & Finansal Analiz API",
-    description="Türk vergi sistemi çerçevesinde vergi ve finansal analiz platformu",
     version="1.0.0",
 )
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=False,
+    allow_origins=[
+        "https://vergi-analiz-frontend.onrender.com",
+        "http://localhost:5173",
+        "http://localhost:3000",
+    ],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
