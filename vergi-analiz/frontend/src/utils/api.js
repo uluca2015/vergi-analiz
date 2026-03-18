@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+const RAW = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+const BASE_URL = RAW.startsWith('http') ? RAW : `https://${RAW}`
 
 const api = axios.create({
   baseURL: BASE_URL,
